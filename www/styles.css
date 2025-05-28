@@ -1,0 +1,54 @@
+/* styles.css */
+
+.shiny-bound-input {
+  color: #808080;               /* Set the color of the reset button */
+  text-decoration: none;        /* Remove the underline of the reset button */
+}
+
+.card .card-header {
+  border-bottom: none;          /* Remove the bottom line of the card header */
+}
+
+.card-header {
+  background-color: white;      /* Header background color */
+  color: black;                 /* Header text color */
+}
+
+/* Positioning of the lines of the card header names (left/right) */
+.text-with-lines {              
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;  /* Align content to the left */
+}
+
+/* Properties of the lines of the card header names (left/right) */
+.line {
+  width: 800px;                 /* Line width (adjust as needed) */
+  height: 1px;                  /* Line height */
+  background-color: lightgray;  /* Line color */
+}
+
+.text {
+  padding-left: 10px;           /* Left spacing */
+  padding-right: 10px;          /* Right spacing */
+  white-space: nowrap;          /* Prevent line break */
+}
+
+.text-container {
+  display: flex;                /* Use flexbox for horizontal alignment */
+  align-items: center;          /* Vertically center content */
+}
+
+.text-black {
+  color: black;                 /* Black text for "Sales by" */
+  padding-right: 0px;
+  padding-left: 10px;
+  white-space: nowrap;
+}
+
+.text-blue {
+  color: blue;                  /* Blue text for "State" */
+  padding-left: 5px;
+  padding-right: 5px;
+  white-space: nowrap;
+}
