@@ -1,12 +1,33 @@
-library(shiny)
-library(bslib)
-library(readxl)
-library(janitor)
-library(plotly)
-library(data.table)
-library(shinyWidgets)
-library(lubridate)
-library(readr)
+
+
+# install the required packages -------------------------------------------
+
+if (!require("shiny"))
+  install.packages("shiny")
+
+if (!require("readxl"))
+  install.packages("readxl")
+
+if (!require("bslib"))
+  install.packages("bslib")
+
+if (!require("janitor"))
+  install.packages("janitor")
+
+if (!require("plotly"))
+  install.packages("plotly")
+
+if (!require("data.table"))
+  install.packages("data.table")
+
+if (!require("shinyWidgets"))
+  install.packages("shinyWidgets")
+
+if (!require("lubridate"))
+  install.packages("lubridate")
+
+if (!require("readr"))
+  install.packages("readr")
 
 # Load UI interface from external file
 source("ui.R")
@@ -15,6 +36,35 @@ source("ui.R")
 server <- function(input, output, session) {
   # Load helper functions from external file
   source("helpers.R", local = T)
+
+  # Information pop up window
+  observeEvent(input$show_info, {
+    showModal(modalDialog(
+      title = "Info",
+      tags$b("Data:"),
+      "Tableau's Superstore Data & US Geo Codes from kaggle",
+      tags$br(),
+      tags$br(),
+      tags$b("Logo:"),
+      "Created by using figma",
+      tags$br(),
+      tags$br(),
+      tags$b("Inspired by:"),
+      tags$a("Pradeep Kumar G",
+        href = paste0("https://public.tableau.com/app/",
+          "profile/pradeepkumar.g/viz/",
+          "SampleSuperstore-SalesPerformance/",
+          "viz_"), target = "_blank"),
+      "&",
+      tags$a("Priya Padham",
+        href = paste0("https://public.tableau.com/app/profile/p.padham/viz/",
+          "SuperstoreDashboard_16709573699130/SuperstoreDashboard"),
+        target = "_blank"),
+      "on Tableau Public",
+      easyClose = TRUE,
+      footer = modalButton("Close")
+    ))
+  })
 
   data <- reactive({
     tryCatch(
@@ -121,6 +171,7 @@ server <- function(input, output, session) {
 
   # Render the year selector input using shinyWidgets::pickerInput
   output$year_selector <- renderUI({
+
     pickerInput(
       "selected_year",
       label = div("Year:", style = "color: black;"),

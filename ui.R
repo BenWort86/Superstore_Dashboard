@@ -1,53 +1,86 @@
-# ui.R
-
 # Load UI components from external file
 source("ui_elements.R")
 
-ui <- page_sidebar(
+ui <- page_navbar(
 
-  # Background color with transparency
-  bg = "rgba(238, 238, 238, 0.6)",
-  includeCSS("www/styles.css"), # Load custom CSS styles
+  # Load custom CSS styles
+  includeCSS("www/styles.css"),
 
-  # Sidebar configuration
-  sidebar = sidebar(
-    width = 200, # Sidebar width in pixels
-    tags$img(src = "Logo_blue.png", height = "200px", width = "auto"), # Company logo
-    uiOutput("year_selector"), # Dynamic year selector input
-    bg = "rgba(0, 0, 0, 0)" # Transparent sidebar background
+  # Logo and dashboard title in navbar (aligned left)
+  nav_item(
+    tags$div(
+      style = "display: flex; align-items: center; margin-left: -15px",
+      tags$img(
+        src = "Logo_white.png",
+        height = "70px",
+        style = "margin-right: 5px;"
+      ),
+      tags$span(
+        "Superstore Dashboard",
+        style = "color: white; font-weight: bold; font-size: 1.1em;"
+      )
+    )
   ),
 
-  # Set theme using Bootstrap 5 and Cerulean Bootswatch
+  # Push following items to the right
+  nav_spacer(),
+
+  # External links and vertical separators
+  nav_item(
+    tags$a("LinkedIn", href = "https://www.linkedin.com/in/benjamin-wortmann/", target = "_blank")
+  ),
+  nav_item(
+    tags$div(style = "width: 1px; background-color: #ccc; height: 25px; margin: 12px 10px;")
+  ),
+  nav_item(
+    tags$a("GitHub", href = "https://github.com/BenWort86", target = "_blank")
+  ),
+  nav_item(
+    tags$div(style = "width: 1px; background-color: #ccc; height: 25px; margin: 12px 10px;")
+  ),
+
+  # Info button triggering modal dialog
+  nav_item(
+    actionLink("show_info", "Info", style = "color: white; cursor: pointer;")
+  ),
+
+  # Sidebar with dynamic year selector
+  sidebar = sidebar(
+    title = "Filter:",
+    uiOutput("year_selector")
+  ),
+
+  # Theme customization (Cerulean + dark navbar styles)
   theme = bs_theme(
     bootswatch = "cerulean",
-    "navbar-bg" = "#f0f0f0",
-    version = 5
+    version = 5,
+    "navbar-bg" = "#001ba3",
+    "navbar-dark-color" = "white",
+    "navbar-dark-hover-color" = "#cccccc",
+    "navbar-dark-active-color" = "white"
   ),
 
-  # Main content area with scrollable div
+  # Main scrollable content area with responsive layout
   div(
-    style = "overflow-y: auto; max-height: 98vh; padding-right: 10px; position: absolute; top: 2; bottom: 2;",
+    class = "main-scroll",
 
-    # First row: map and regional sales
     layout_column_wrap(
-      fill = T,
+      fill = TRUE,
       ui_elements[["map"]],
       ui_elements[["sales_by_region"]]
     ),
 
-    # Second row: sales by category
     layout_column_wrap(
-      fill = T,
+      fill = TRUE,
       ui_elements[["sales_by_category"]]
     ),
 
-    # Third row: sales by sub-category
     layout_column_wrap(
-      fill = T,
+      fill = TRUE,
       ui_elements[["sales_by_sub_category"]]
     ),
 
-    # Optional reset button or map element (if defined in ui_elements)
+    # Optional reset map button
     ui_elements[["reset_map"]]
   )
 )

@@ -52,3 +52,23 @@
   padding-right: 5px;
   white-space: nowrap;
 }
+
+.navbar {
+  background-image: linear-gradient(to right, #001ba3, #0066cc);
+  color: white !important;
+}
+
+.main-scroll {
+  flex: 1 1 auto;
+  overflow-y: auto;
+  padding-top: 20px;
+}
+
+#year_selector_nav .form-control {
+  height: 30px;
+  font-size: 0.85em;
+  padding: 2px 6px;
+  margin-top: 10px;
+}
+
+
