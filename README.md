@@ -1,6 +1,6 @@
 # Superstore Dashboard
 
-This small and simple dashboard was a personal project to apply the knowledge I gained while developing a two-sample t-test app a few years ago.
+This small and simple dashboard was a personal project to apply the knowledge I gained while developing a [two-sample t-test app](https://github.com/BenWort86/Two_sample_t_test_Monte_Carlo_simulator) a few years ago.
 My main goal was to compare the process of building dashboards in Shiny versus Tableau, which I often use professionally.However, since I wasn’t very 
 experienced with the bslib and plotly packages at the time, it took me a while to wrap my head around how everything works.
 
