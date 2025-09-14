@@ -55,11 +55,6 @@ server <- function(input, output, session) {
           "profile/pradeepkumar.g/viz/",
           "SampleSuperstore-SalesPerformance/",
           "viz_"), target = "_blank"),
-      "&",
-      tags$a("Priya Padham",
-        href = paste0("https://public.tableau.com/app/profile/p.padham/viz/",
-          "SuperstoreDashboard_16709573699130/SuperstoreDashboard"),
-        target = "_blank"),
       "on Tableau Public",
       easyClose = TRUE,
       footer = modalButton("Close")
