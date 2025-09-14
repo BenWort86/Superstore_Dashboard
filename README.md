@@ -1,19 +1,19 @@
 # Superstore Dashboard
 
-This small and simple dashboard was a personal project to apply the knowledge I gained while developing a two-sample t-test app a few years ago.
+This small and simple dashboard was a personal project to apply the knowledge I gained while developing a [two-sample t-test app](https://github.com/BenWort86/Two_sample_t_test_Monte_Carlo_simulator) a few years ago.
 My main goal was to compare the process of building dashboards in Shiny versus Tableau, which I often use professionally.However, since I wasn’t very 
 experienced with the bslib and plotly packages at the time, it took me a while to wrap my head around how everything works.
 
 As I was only aiming to build a basic dashboard in Shiny, this project shouldn’t be seen as a demonstration of my dashboard design skills.
 That said, most of my design inspiration comes from Tableau Public. Especially the [Sample Superstore - Sales Performance-Dashboard](https://public.tableau.com/app/profile/pradeepkumar.g/viz/SampleSuperstore-SalesPerformance/viz_)
-created by Pradeep Kumar G gave the a little challenge to manage the same results using plotly. There are perhaps many things that could have been done better, but I'm still gaining experience in this area.
+created by Pradeep Kumar G gave the a little challenge to manage the same results (not exactly) using plotly and bslib. There are perhaps many things that could have been done better, but I'm still gaining experience in this area.
 
 ## Description
 
-The following picture shows the overall dashboard. It's pretty straightforward.
-You can filter the data by selecting a state on the map. To undo your selection, simply click the Reset button.
-On the left-hand side, there’s one additional filter that allows you to choose the desired year. If you want to hide the sidebar, you can click the small arrow in the top-right corner of the panel.
-Of course, all of this sounds quite theoretical — you can either use the code to run the dashboard in your own R environment, or simply view the live version I uploaded [here](https://benwort-apps.shinyapps.io/Superstore_Dashboard/).
+The following picture shows the overall dashboard. It's pretty straightforward. You can filter the data by selecting a state on the map. To undo your selection, 
+simply click the Reset button. On the left-hand side, there’s one additional filter that allows you to choose the desired year. If you want to hide the sidebar, 
+you can click the small arrow in the top-right corner of the panel. Of course, all of this sounds quite theoretical — you can either use the code to run the dashboard 
+in your own R environment, or simply view the live version I uploaded [here](https://benwort-apps.shinyapps.io/Superstore_Dashboard/).
 
 <p float="left">
    <img src="SuperstoreDashboard_Overview.png" width= "400" >
